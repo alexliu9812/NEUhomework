@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<workspace>
+	<settings>
+		<label>API</label>
+	</settings>
+	<users>
+		<user>
+			<path>API2.jcu</path>
+		</user>
+	</users>
+	<projects>
+		<project>
+			<path>API.jcp</path>
+		</project>
+	</projects>
+</workspace>

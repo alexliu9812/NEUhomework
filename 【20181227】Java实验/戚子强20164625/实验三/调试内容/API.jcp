@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+	<settings>
+		<label>API</label>
+		<root_path>\</root_path>
+		<output_path>\</output_path>
+		<source_path>\</source_path>
+		<jdkprofile_ref/>
+		<compiler_ref/>
+		<ant_ref/>
+	</settings>
+	<ant_events/>
+	<run_items>
+		<item run="testString4"/>
+		<item run="TestInteger"/>
+		<item run/>
+	</run_items>
+	<runtimes>
+		<runtime>
+			<label>&lt;Default&gt;</label>
+			<application_ref>&lt;Default&gt;</application_ref>
+			<applet_ref>&lt;Default&gt;</applet_ref>
+			<debugger_ref>&lt;Default&gt;</debugger_ref>
+			<param>2 3</param>
+			<run>TestInteger</run>
+			<verify>true</verify>
+		</runtime>
+	</runtimes>
+	<libraries/>
+	<files>
+		<include>
+			<fileitem>
+				<path>HashtableTest.java</path>
+			</fileitem>
+			<fileitem>
+				<path>MyKey.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestCalendar.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestCollection.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestDateFormat.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testHashTable1.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestInteger.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testMath.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestSort.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString1.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString2.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString3.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString4.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString5.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testString6.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testStringBuffer.java</path>
+			</fileitem>
+			<fileitem>
+				<path>TestVector.java</path>
+			</fileitem>
+			<fileitem>
+				<path>testVector1.java</path>
+			</fileitem>
+			<fileitem>
+				<path>tmp1.java</path>
+			</fileitem>
+		</include>
+	</files>
+	<tasks>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testString5.java</filepath>
+			<line>24</line>
+			<timestamp>1196817431</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testString3.java</filepath>
+			<line>24</line>
+			<timestamp>1196910103</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testString2.java</filepath>
+			<line>23</line>
+			<timestamp>1196910399</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testString4.java</filepath>
+			<line>23</line>
+			<timestamp>1196911258</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testMath.java</filepath>
+			<line>23</line>
+			<timestamp>1197261110</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testVector1.java</filepath>
+			<line>23</line>
+			<timestamp>1197264347</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testHashTable1.java</filepath>
+			<line>24</line>
+			<timestamp>1197270108</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>TestCalendar.java</filepath>
+			<line>23</line>
+			<timestamp>1197270770</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>testString1.java</filepath>
+			<line>23</line>
+			<timestamp>1197293339</timestamp>
+		</todotaskitem>
+		<todotaskitem>
+			<description>TODO code application logic here</description>
+			<filepath>tmp1.java</filepath>
+			<line>23</line>
+			<timestamp>1197296293</timestamp>
+		</todotaskitem>
+	</tasks>
+</project>
