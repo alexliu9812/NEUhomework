@@ -1,0 +1,5 @@
+Scope 0: Global Scope
+Scope 1: main
+Name,DataType,Offset,Pre-domain
+a,int,0,0,
+Scope 2: if

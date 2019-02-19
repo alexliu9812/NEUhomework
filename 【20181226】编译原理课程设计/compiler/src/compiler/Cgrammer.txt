@@ -1,0 +1,327 @@
+//开始符号translation_unit, 已消除左递归
+translation_unit    : external_decl translation_unit_tmpvar
+            ;
+translation_unit_tmpvar : external_decl translation_unit_tmpvar
+            | epsilon
+            ;
+external_decl		: type_spec postfix_27
+			| declarator postfix_1
+			;
+postfix_27			: declarator postfix_28
+			| ';'
+			;
+//可能在这里加POP，用于声明语句,前者为函数声明,后者为变量的声明 postfix_4 init_declarator_list_tmpvar POP ';' 
+postfix_28			: postfix_1
+			| INITDECL postfix_4 init_declarator_list_tmpvar ';' 
+			;
+postfix_1       : decl_list compound_stat
+            | compound_stat
+            ;
+decl            : type_spec postfix_2
+            ;
+postfix_2       : init_declarator_list ';'
+            | ';'
+            ;
+decl_list       : decl decl_list_tmpvar
+            ;
+decl_list_tmpvar : decl decl_list_tmpvar
+            | epsilon
+            ;
+type_spec       : PUSH 'void' 
+            | PUSH 'char' 
+            | PUSH 'short' 
+            | PUSH 'int' 
+            | PUSH 'long' 
+            | PUSH 'float'
+            | PUSH 'double' 
+            ;
+init_declarator_list    : init_declarator init_declarator_list_tmpvar
+            ;
+init_declarator_list_tmpvar : ',' init_declarator init_declarator_list_tmpvar
+            | epsilon
+            ;
+//删去结尾的POP
+init_declarator     : declarator INITDECL postfix_4 
+            ;
+postfix_4           : PUSH '=' initializer 
+            | epsilon
+            ;
+spec_qualifier_list : type_spec postfix_5
+            ;
+postfix_5           : spec_qualifier_list
+            | epsilon
+            ;
+declarator      : direct_declarator
+            ;
+direct_declarator   : PUSH id direct_declarator_tmpvar
+            | '(' declarator ')' direct_declarator_tmpvar
+            ;
+direct_declarator_tmpvar : postfix_6 direct_declarator_tmpvar
+            | epsilon
+            ;
+postfix_6           : '[' postfix_7
+            | SCOPEINIT '(' postfix_8
+            ;
+postfix_7           : const_exp INITARR ']'
+            | ']'
+            ;
+//前者为形参列表，后者为实参列表
+postfix_8           : param_type_list ')'
+            | id_list ')'
+            | ')'
+            ;
+param_type_list     : param_list
+            ;
+param_list      : param_decl POP param_list_tmpvar
+            ;
+param_list_tmpvar : ',' param_decl POP param_list_tmpvar
+            | epsilon
+            ;
+param_decl      : type_spec postfix_9
+            ;
+postfix_9       : declarator
+            | epsilon
+            ;
+id_list         : PUSH id id_list_tmpvar
+            ;
+id_list_tmpvar  : ',' PUSH id id_list_tmpvar
+            | epsilon
+            ;
+initializer     : assignment_exp ASSI
+            | '{' initializer_list '}'
+            ;
+initializer_list    : initializer initializer_list_tmpvar
+            ;
+initializer_list_tmpvar : ',' initializer initializer_list_tmpvar
+            | epsilon
+            ;
+type_name       : spec_qualifier_list
+            ;
+stat            : PUSH id postfix_31
+            | 'case' const_exp ':' stat
+            | 'default' ':' stat
+	        | '(' postfix_30
+            | const_prod postfix_exp_tmpvar postfix_29
+            | string postfix_exp_tmpvar postfix_29
+            | PUSH '++' unary_exp GEQ_UNARY postfix_29 
+            | PUSH '--' unary_exp GEQ_UNARY postfix_29 
+            | unary_operator cast_exp postfix_29 
+            | 'sizeof' postfix_24 postfix_29 
+            | ';'
+            | compound_stat
+            | selection_stat
+            | iteration_stat
+            | jump_stat
+            | 'cin' '>>' PUSH id SCANF
+            | 'cout' decimal PRINT
+            ;
+decimal         : '(' PUSH float_const ')' '<<' out_content 
+            | '<<' out_content 
+            ;
+out_content     : PUSH id
+            | PUSH float_const
+            ;
+postfix_29      : assignment_operator assignment_exp exp_tmpvar ASSI ';'
+	        | mult_exp_tmpvar additive_exp_tmpvar shift_expression_tmpvar relational_exp_tmpvar equality_exp_tmpvar and_exp_tmpvar exclusive_or_exp_tmpvar inclusive_or_exp_tmpvar logical_and_exp_tmpvar logical_or_exp_tmpvar postfix_18 exp_tmpvar ';'
+	        ;
+postfix_30      : type_name ')' cast_exp mult_exp_tmpvar additive_exp_tmpvar shift_expression_tmpvar relational_exp_tmpvar equality_exp_tmpvar and_exp_tmpvar exclusive_or_exp_tmpvar inclusive_or_exp_tmpvar logical_and_exp_tmpvar logical_or_exp_tmpvar postfix_18 exp_tmpvar ';'
+	        | exp ')' postfix_exp_tmpvar postfix_29
+	        ;
+postfix_31      : LABER ':' stat
+	        | postfix_exp_tmpvar postfix_29
+	        ; 
+labeled_stat        : PUSH id ':' stat
+            | 'case' const_exp ':' stat
+            | 'default' ':' stat
+            ;
+exp_stat        : exp ';'
+            |   ';'
+            ;
+compound_stat       : '{' postfix_10
+            ;
+postfix_10          : decl_list postfix_11
+            | stat_list FORINC '}' END
+            | FORINC '}' END
+            ;
+postfix_11          : stat_list FORINC '}' END
+            | FORINC '}' END
+            ;
+stat_list       : stat stat_list_tmpvar
+            ;
+stat_list_tmpvar : stat stat_list_tmpvar
+            | epsilon
+            ;
+selection_stat      : 'if' '(' exp ')' IF stat postfix_12 
+            | 'switch' '(' exp ')' stat
+            ;
+postfix_12          : 'else' ELSE stat
+            | epsilon
+            ;
+//循环
+iteration_stat      : 'while' WHILE '(' exp ')' DO stat 
+            | 'do' DOWHILE stat 'while' DOWHCMP '(' exp ')' ENDDOWH ';'
+            | 'for' FOR '(' postfix_13
+            ;
+postfix_13          : exp ';' postfix_15
+//           | ';' postfix_15
+            ;
+postfix_15          : FORSECPRE exp FORSECPST ';' postfix_16
+//          | ';' postfix_16
+            ;
+postfix_16          : FORTHDPRE exp FORTHDPST ')' stat
+//          | ')' stat
+            ;
+//状态跳转
+jump_stat       : 'goto' GOTO id ';'
+            | 'continue' ';'
+            | 'break' ';'
+            | 'return' postfix_17
+            ;
+postfix_17      : exp RETURN ';'
+            | RETURN ';'
+            ;
+exp             : assignment_exp ASSI exp_tmpvar
+            ;
+exp_tmpvar      : ',' assignment_exp ASSI exp_tmpvar
+            | epsilon
+            ;
+assignment_exp      : unary_exp postfix_32
+	        | '(' type_name ')' cast_exp mult_exp_tmpvar additive_exp_tmpvar shift_expression_tmpvar relational_exp_tmpvar equality_exp_tmpvar and_exp_tmpvar exclusive_or_exp_tmpvar inclusive_or_exp_tmpvar logical_and_exp_tmpvar logical_or_exp_tmpvar postfix_18
+            ;
+postfix_32          : mult_exp_tmpvar additive_exp_tmpvar shift_expression_tmpvar relational_exp_tmpvar equality_exp_tmpvar and_exp_tmpvar exclusive_or_exp_tmpvar inclusive_or_exp_tmpvar logical_and_exp_tmpvar logical_or_exp_tmpvar postfix_18
+		    | assignment_operator assignment_exp
+		    ;
+assignment_operator : PUSH '=' 
+            | PUSH '*=' 
+            | PUSH '/=' 
+            | PUSH '%=' 
+            | PUSH '+=' 
+            | PUSH '-=' 
+            | PUSH '<<='
+            | PUSH '>>=' 
+            | PUSH '&=' 
+            | PUSH '^=' 
+            | PUSH '|='
+            ;
+conditional_exp     : logical_or_exp postfix_18
+            ;
+postfix_18          : '?' exp ':' conditional_exp 
+            | epsilon
+            ;
+const_exp       : conditional_exp
+            ;
+logical_or_exp      : logical_and_exp logical_or_exp_tmpvar
+            ;
+logical_or_exp_tmpvar : PUSH '||' logical_and_exp LOGIC logical_or_exp_tmpvar
+            | epsilon
+            ;
+logical_and_exp     : inclusive_or_exp logical_and_exp_tmpvar
+            ;
+logical_and_exp_tmpvar : PUSH '&&' inclusive_or_exp LOGIC logical_and_exp_tmpvar
+            | epsilon
+            ;
+inclusive_or_exp    : exclusive_or_exp inclusive_or_exp_tmpvar
+            ;
+inclusive_or_exp_tmpvar : PUSH '|' exclusive_or_exp inclusive_or_exp_tmpvar
+            | epsilon
+            ;
+exclusive_or_exp    : and_exp exclusive_or_exp_tmpvar
+            ;
+exclusive_or_exp_tmpvar : PUSH '^' and_exp exclusive_or_exp_tmpvar
+            | epsilon
+            ;
+and_exp         : equality_exp LOGIC and_exp_tmpvar
+            ;
+and_exp_tmpvar  : PUSH '&' equality_exp LOGIC and_exp_tmpvar
+            | epsilon
+            ;
+equality_exp        : relational_exp equality_exp_tmpvar
+            ;
+equality_exp_tmpvar : postfix_19 equality_exp_tmpvar
+            | epsilon
+            ;
+postfix_19          : PUSH '==' relational_exp RELATION
+            | PUSH '!=' relational_exp RELATION
+            ;
+relational_exp      : shift_expression relational_exp_tmpvar
+            ;
+relational_exp_tmpvar : postfix_20 relational_exp_tmpvar
+            | epsilon
+            ;
+postfix_20          : PUSH '<' shift_expression RELATION
+            | PUSH '>' shift_expression RELATION
+            | PUSH '<=' shift_expression RELATION
+            | PUSH '>=' shift_expression RELATION
+            ;
+shift_expression    : additive_exp shift_expression_tmpvar
+            ;
+shift_expression_tmpvar : postfix_21 shift_expression_tmpvar
+            | epsilon
+            ;
+postfix_21          : PUSH '<<' additive_exp LOGIC
+            | PUSH '>>' additive_exp LOGIC
+            ;
+additive_exp        : mult_exp additive_exp_tmpvar
+            ;
+additive_exp_tmpvar : postfix_22 additive_exp_tmpvar
+            | epsilon
+            ;
+postfix_22          : PUSH '+' mult_exp GEQ
+            | PUSH '-' mult_exp GEQ
+            ;
+mult_exp        : cast_exp mult_exp_tmpvar
+            ;
+mult_exp_tmpvar : postfix_23 mult_exp_tmpvar
+            | epsilon
+            ;
+postfix_23      : PUSH '*' cast_exp GEQ
+            | PUSH '/' cast_exp GEQ
+            | PUSH '%' cast_exp GEQ
+            ;
+cast_exp        : unary_exp
+            | '(' type_name ')' cast_exp
+            ;
+unary_exp       : postfix_exp GEQ_UNARY
+            | PUSH '++' unary_exp 
+            | PUSH '--' unary_exp
+            | unary_operator cast_exp GEQ_UNARY
+            | 'sizeof' postfix_24
+            ;
+postfix_24      : unary_exp
+            | '(' type_name ')'
+            ;
+unary_operator      : '&' 
+            | '*' 
+            | '+' 
+            | '-'
+            | PUSH '~' 
+            | PUSH '!'
+            ;
+postfix_exp     : primary_exp postfix_exp_tmpvar
+            ;
+postfix_exp_tmpvar : postfix_25 postfix_exp_tmpvar 
+            | epsilon
+            ;
+postfix_25      : '[' exp ']'
+            | GETFUNCNM '(' postfix_26
+            | PUSH '++' GEQ_UNARY
+            | PUSH '--' GEQ_UNARY
+            ;
+postfix_26      : argument_exp_list ')' CALL
+            | ')'
+            ;
+primary_exp     : PUSH id
+            | const_prod
+            | string
+            | '(' exp ')'
+            ;
+//实参列表
+argument_exp_list   : assignment_exp PARAM argument_exp_list_tmpvar
+            ;
+argument_exp_list_tmpvar : ',' assignment_exp PARAM argument_exp_list_tmpvar
+            | epsilon
+            ;
+const_prod          : PUSH int_const
+            | PUSH char_const
+            | PUSH float_const
+            ;
