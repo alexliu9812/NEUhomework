@@ -1,0 +1,13 @@
+INPUT(
+./debug\main.o
+./debug\quiwidget.o
+./debug\supermarket.o
+./debug\login.o
+./debug\qrc_main.o
+./debug\qrc_qss.o
+./debug\qrc_demo.o
+./debug\qrc_image.o
+./debug\moc_quiwidget.o
+./debug\moc_supermarket.o
+./debug\moc_login.o
+);

@@ -1,0 +1,13 @@
+INPUT(
+./release\main.o
+./release\quiwidget.o
+./release\supermarket.o
+./release\login.o
+./release\qrc_main.o
+./release\qrc_qss.o
+./release\qrc_demo.o
+./release\qrc_image.o
+./release\moc_quiwidget.o
+./release\moc_supermarket.o
+./release\moc_login.o
+);

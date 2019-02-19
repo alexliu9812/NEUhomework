@@ -1,0 +1,1290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Supermarket</class>
+ <widget class="QMainWindow" name="Supermarket">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>882</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,0,3">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,1">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_1">
+           <attribute name="title">
+            <string>入库</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="1,1">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_3">
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_2"/>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_22">
+                <property name="text">
+                 <string> 售价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_21">
+                <property name="text">
+                 <string> 进价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_20">
+                <property name="text">
+                 <string> 名称：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_19">
+                <property name="text">
+                 <string>  ID：</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_4" columnstretch="1,1">
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_25">
+                <property name="text">
+                 <string>分类：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="0">
+               <widget class="QPushButton" name="pushButton_8">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="minimumSize">
+                 <size>
+                  <width>1</width>
+                  <height>1</height>
+                 </size>
+                </property>
+                <property name="sizeIncrement">
+                 <size>
+                  <width>0</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="baseSize">
+                 <size>
+                  <width>2</width>
+                  <height>3</height>
+                 </size>
+                </property>
+                <property name="text">
+                 <string>置空输入</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_24">
+                <property name="text">
+                 <string>单位：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
+              </item>
+              <item row="4" column="1">
+               <widget class="QPushButton" name="pushButton_3">
+                <property name="text">
+                 <string>确认入库</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="comboBox">
+                <item>
+                 <property name="text">
+                  <string>请选择单位</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>公斤</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>瓶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>箱</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>包(袋)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>盒</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>件</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>本</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>支</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>张</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>部</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>条</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>双</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>根</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>罐</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>棵</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>捆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>无</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="comboBox_2">
+                <item>
+                 <property name="text">
+                  <string>请选择分类</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>食品饮料</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>粮油副食</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个人护理</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>居家生活</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>护肤美妆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>家居清洁</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>母婴用品</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>烟酒糖茶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>生鲜</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_23">
+                <property name="text">
+                 <string>数量：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_2">
+           <attribute name="title">
+            <string>出库</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_5" rowstretch="2,1" columnstretch="1,2,1,1">
+              <item row="1" column="3">
+               <widget class="QPushButton" name="pushButton_2">
+                <property name="text">
+                 <string>确认出库</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit_11"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_54">
+                <property name="text">
+                 <string>    请输入ID(*)：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="2">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>查询</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="1,1">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_10">
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_7"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_40">
+                <property name="text">
+                 <string> 名称：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_41">
+                <property name="text">
+                 <string>  ID：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit_8"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_42">
+                <property name="text">
+                 <string> 进价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_43">
+                <property name="text">
+                 <string> 售价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
+              </item>
+              <item row="3" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_12">
+              <item row="2" column="1">
+               <widget class="QComboBox" name="comboBox_9">
+                <item>
+                 <property name="text">
+                  <string>可选分类</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>食品饮料</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>粮油副食</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个人护理</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>居家生活</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>护肤美妆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>家居清洁</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>母婴用品</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>烟酒糖茶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>生鲜</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="comboBox_10">
+                <item>
+                 <property name="text">
+                  <string>可选单位</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>公斤</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>瓶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>箱</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>包(袋)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>盒</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>件</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>本</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>支</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>张</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>部</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>条</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>双</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>根</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>罐</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>棵</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>捆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>无</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="pushButton_6">
+                <property name="text">
+                 <string>查询</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_48">
+                <property name="text">
+                 <string>        单位：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_49">
+                <property name="text">
+                 <string>        类别：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_50">
+                <property name="text">
+                 <string>        数量：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_13"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QPushButton" name="pushButton_9">
+                <property name="text">
+                 <string>置空输入</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_4">
+           <attribute name="title">
+            <string>修改</string>
+           </attribute>
+           <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
+            <item>
+             <layout class="QGridLayout" name="gridLayout_11">
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_9"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_44">
+                <property name="text">
+                 <string> 名称：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_45">
+                <property name="text">
+                 <string> ID(*)：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit_10"/>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_46">
+                <property name="text">
+                 <string> 进价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_47">
+                <property name="text">
+                 <string> 售价：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
+              </item>
+              <item row="3" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_10"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_13">
+              <item row="2" column="1">
+               <widget class="QComboBox" name="comboBox_11">
+                <item>
+                 <property name="text">
+                  <string>可改分类</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>食品饮料</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>粮油副食</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个人护理</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>居家生活</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>护肤美妆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>家居清洁</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>母婴用品</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>烟酒糖茶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>生鲜</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="comboBox_12">
+                <item>
+                 <property name="text">
+                  <string>可改单位</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>公斤</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>个</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>瓶</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>箱</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>包(袋)</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>盒</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>件</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>本</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>支</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>张</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>部</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>条</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>双</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>根</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>罐</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>棵</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>捆</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>无</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>其他</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QPushButton" name="pushButton_7">
+                <property name="text">
+                 <string>确认修改</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_51">
+                <property name="text">
+                 <string>        单位：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_52">
+                <property name="text">
+                 <string>        类别：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_53">
+                <property name="text">
+                 <string>        数量：</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_14"/>
+              </item>
+              <item row="3" column="0">
+               <widget class="QPushButton" name="pushButton_10">
+                <property name="text">
+                 <string>置空输入</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QTabWidget" name="tabWidget_2">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="tab_5">
+           <attribute name="title">
+            <string>账户</string>
+           </attribute>
+           <layout class="QVBoxLayout" name="verticalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;注意，您还没有登录！&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_2" columnstretch="1,3" columnminimumwidth="0,0">
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_3">
+                <property name="text">
+                 <string>账户名称：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>账户组别：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLabel" name="label_7">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QLabel" name="label_5">
+                <property name="text">
+                 <string>登录时长：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="0">
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>当前时间：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="3" column="1">
+               <widget class="QLabel" name="label_10">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item row="4" column="1">
+               <widget class="QPushButton" name="pushButton_4">
+                <property name="text">
+                 <string>注销</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="1" column="1">
+               <widget class="QLineEdit" name="lineEdit_4"/>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="label_27">
+                <property name="text">
+                 <string>  密码：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="0" column="1">
+               <widget class="QLineEdit" name="lineEdit_3"/>
+              </item>
+              <item row="0" column="0">
+               <widget class="QLabel" name="label_26">
+                <property name="text">
+                 <string>  账号：</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QPushButton" name="pushButton">
+                <property name="text">
+                 <string>点此登录</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_6">
+           <attribute name="title">
+            <string>统计</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout" columnstretch="1,3">
+            <item row="0" column="0" colspan="2">
+             <widget class="QLabel" name="label_28">
+              <property name="text">
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;登录后可以查看。&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="label_17">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLabel" name="label_14">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLabel" name="label_18">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="label_13">
+              <property name="layoutDirection">
+               <enum>Qt::LeftToRight</enum>
+              </property>
+              <property name="text">
+               <string>*</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QLabel" name="label">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>操作结果记录:</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QTableView" name="tableView"/>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>882</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_F">
+    <property name="geometry">
+     <rect>
+      <x>257</x>
+      <y>132</y>
+      <width>157</width>
+      <height>147</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>文件(&amp;F)</string>
+    </property>
+    <widget class="QMenu" name="menu_S">
+     <property name="title">
+      <string>导出数据(S)</string>
+     </property>
+     <addaction name="actiondda"/>
+     <addaction name="actionCSV_C"/>
+    </widget>
+    <addaction name="action_O"/>
+    <addaction name="menu_S"/>
+    <addaction name="actiond"/>
+    <addaction name="separator"/>
+    <addaction name="actiond_2"/>
+   </widget>
+   <widget class="QMenu" name="menu">
+    <property name="geometry">
+     <rect>
+      <x>311</x>
+      <y>132</y>
+      <width>137</width>
+      <height>125</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>帮助(&amp;H)</string>
+    </property>
+    <addaction name="action_H"/>
+    <addaction name="action_B"/>
+    <addaction name="separator"/>
+    <addaction name="action_A"/>
+   </widget>
+   <addaction name="menu_F"/>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action_O">
+   <property name="text">
+    <string>导入数据(&amp;O)...</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionCSV_C">
+   <property name="text">
+    <string>导出CSV表格(&amp;C)...</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_H">
+   <property name="text">
+    <string>查看帮助(&amp;V)...</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="action_A">
+   <property name="text">
+    <string>关于(&amp;A)...</string>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>10</pointsize>
+    </font>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="action_B">
+   <property name="text">
+    <string>反馈(&amp;B)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+B</string>
+   </property>
+  </action>
+  <action name="actiond">
+   <property name="text">
+    <string>导出操作记录(&amp;D)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actiondda">
+   <property name="text">
+    <string>导出加密文件(&amp;R)...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
+  </action>
+  <action name="actiond_2">
+   <property name="text">
+    <string>清空数据库(&amp;Q)</string>
+   </property>
+   <property name="iconText">
+    <string>清空数据库(Q)</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
