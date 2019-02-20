@@ -10,6 +10,11 @@
 
 - 目前总大小：233 MB（PS：github有个仓库信息API：语法:  https://api.github.com/repos/[Username]/[Repos] 实例: https://api.github.com/repos/qiziqiang/paint ）
 
+- github的历史纪录很好用（Replace github.com with github.githistory.xyz in any file url）
+
+![history-demo](history-demo.gif)
+
+
 ### TODO
 
 本项目所有东西都是作为交作业所做，受时间限制和为了合乎一些要求做得并不完美，我没有强迫症所以我不想对里面的某一项目进行更新了，如果你觉得有哪些地方可以更好请写好代码并提request，提前致谢。本项目大概会更新到2020年6月份我做完毕业设计的时候，希望能对自己和他人有些用处。
