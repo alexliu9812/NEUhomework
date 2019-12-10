@@ -1,4 +1,8 @@
 //开始符号translation_unit, 已消除左递归
+//translation_unit：翻译开始单元 external_decl：外部声明
+//XXXX_tmpvar：为了去除左递归而定义 postfix_XX：后缀，作为非终结符
+//epsilon：埃普西隆，表示空字符串 type_spec：类型定义，如void，int等
+//declarator：声明
 translation_unit    : external_decl translation_unit_tmpvar
             ;
 translation_unit_tmpvar : external_decl translation_unit_tmpvar
@@ -11,6 +15,12 @@ postfix_27			: declarator postfix_28
 			| ';'
 			;
 //可能在这里加POP，用于声明语句,前者为函数声明,后者为变量的声明 postfix_4 init_declarator_list_tmpvar POP ';' 
+//postfix_XX：后缀，作为非终结符 
+//XXXX_tmpvar：为了去除左递归而定义
+//decl_list：声明列表 decl：声明 compound_stat：复合表达式
+//init_declarator_list：初始声明列表，type_spec：类型定义，如void，int等
+//init_declarator：初始声明 declarator：声明
+
 postfix_28			: postfix_1
 			| INITDECL postfix_4 init_declarator_list_tmpvar ';' 
 			;
